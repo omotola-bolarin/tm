@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/uikit@3.15.3/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://unpkg.com/uikit@3.15.3/dist/js/uikit.min.js"></script>
+    <script src="https://unpkg.com/uikit@3.15.3/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <script type="importmap">
+        {
+          "imports": {
+            "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+          }
+        }
+    </script>
+    <div id="app" >
+        <div :class="classes">{{ message }}</div>
+    </div>
+    <script type="module">
+        import { createApp } from 'vue'
+        
+      
+        createApp({
+          data() {
+            return {
+              message: null,
+              classes: 'uk-height-viewport uk-background-muted uk-flex uk-flex-center uk-flex-middle'
+            }
+          },
+          mounted() {
+            this.message = window.location.href
+          }
+        }).mount('#app')
+    </script>
+   
+    
+</body>
+</html>
